@@ -7,7 +7,7 @@ import (
 	"golang.org/x/sync/singleflight"
 )
 
-func Benchmark_singleflight(b *testing.B) {
+func Benchmark_hlts2_singleflight(b *testing.B) {
 	sf := New()
 
 	var (
