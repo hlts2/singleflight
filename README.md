@@ -2,7 +2,7 @@
 
 [![GoDoc](https://godoc.org/github.com/hlts2/singleflight?status.svg)](http://godoc.org/github.com/hlts2/singleflight)
 
-singleflight is simple golang singleflight library.
+singleflight is simple golang singleflight library and provides a duplicate function call a suppression
 
 ## Requirement
 
