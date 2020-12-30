@@ -27,7 +27,8 @@ func New() Group {
 }
 
 // Do executes and returns the results of the given function, making sure that only one execution is in-flight for a given key at a time.
-// If a duplicate comes in, the duplicate caller waits for the original to complete and receives the same results. The return value shared indicates whether v was given to multiple callers.
+// If a duplicate comes in, the duplicate caller waits for the original to complete and receives the same results.
+// The return value shared indicates whether v was given to multiple callers.
 func (g *group) Do(key string, fn func() (interface{}, error)) (v interface{}, err error, shared bool) {
 	actual, loaded := g.m.LoadOrStore(key, new(result))
 	result := actual.(*result)
