@@ -60,14 +60,14 @@ The `total` is the number of accesses and the `shared` is the number of shared r
 goos: linux
 goarch: amd64
 pkg: github.com/hlts2/singleflight
-Benchmark_hlts2_singleflight-7  7752378  142 ns/op  80 B/op  2 allocs/op
+Benchmark_hlts2_singleflight-7   	12671460	        96.4 ns/op	      80 B/op	       2 allocs/op
 --- BENCH: Benchmark_singleflight-7
     singleflight_bench_test.go:30: singleflight total: 1 shared: 0
     singleflight_bench_test.go:30: singleflight total: 100 shared: 99
     singleflight_bench_test.go:30: singleflight total: 10000 shared: 9999
     singleflight_bench_test.go:30: singleflight total: 1000000 shared: 999999
     singleflight_bench_test.go:30: singleflight total: 12671460 shared: 12671459
-Benchmark_sync_singleflight-7  7195585  170 ns/op  96 B/op  1 allocs/op
+Benchmark_sync_singleflight-7    	13313968	       119 ns/op	      11 B/op	       0 allocs/op
 --- BENCH: Benchmark_sync_singleflight-7
     singleflight_bench_test.go:53: singleflight total: 1 shared: 0
     singleflight_bench_test.go:53: singleflight total: 100 shared: 0
