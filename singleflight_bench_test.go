@@ -15,15 +15,17 @@ func Benchmark_hlts2_singleflight(b *testing.B) {
 		total int64
 	)
 
-	for i := 0; i < b.N; i++ {
-		atomic.AddInt64(&total, 1)
-		_, _, shared := sf.Do("key", func() (interface{}, error) {
-			return nil, nil
-		})
-		if shared {
-			atomic.AddInt64(&cnt, 1)
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			atomic.AddInt64(&total, 1)
+			_, _, shared := sf.Do("key", func() (interface{}, error) {
+				return nil, nil
+			})
+			if shared {
+				atomic.AddInt64(&cnt, 1)
+			}
 		}
-	}
+	})
 
 	b.Logf("singleflight total: %d shared: %d", atomic.LoadInt64(&total), atomic.LoadInt64(&cnt))
 }
@@ -36,15 +38,17 @@ func Benchmark_sync_singleflight(b *testing.B) {
 		total int64
 	)
 
-	for i := 0; i < b.N; i++ {
-		atomic.AddInt64(&total, 1)
-		_, _, shared := sf.Do("key", func() (interface{}, error) {
-			return nil, nil
-		})
-		if shared {
-			atomic.AddInt64(&cnt, 1)
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			atomic.AddInt64(&total, 1)
+			_, _, shared := sf.Do("key", func() (interface{}, error) {
+				return nil, nil
+			})
+			if shared {
+				atomic.AddInt64(&cnt, 1)
+			}
 		}
-	}
+	})
 
 	b.Logf("singleflight total: %d shared: %d", atomic.LoadInt64(&total), atomic.LoadInt64(&cnt))
 }

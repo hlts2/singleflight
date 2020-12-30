@@ -62,16 +62,16 @@ goarch: amd64
 pkg: github.com/hlts2/singleflight
 Benchmark_hlts2_singleflight-7  7752378  142 ns/op  80 B/op  2 allocs/op
 --- BENCH: Benchmark_singleflight-7
-    singleflight_bench_test.go:28: singleflight total: 1 shared: 0
-    singleflight_bench_test.go:28: singleflight total: 100 shared: 99
-    singleflight_bench_test.go:28: singleflight total: 10000 shared: 9999
-    singleflight_bench_test.go:28: singleflight total: 1000000 shared: 999999
-    singleflight_bench_test.go:28: singleflight total: 7752378 shared: 7752377
+    singleflight_bench_test.go:30: singleflight total: 1 shared: 0
+    singleflight_bench_test.go:30: singleflight total: 100 shared: 99
+    singleflight_bench_test.go:30: singleflight total: 10000 shared: 9999
+    singleflight_bench_test.go:30: singleflight total: 1000000 shared: 999999
+    singleflight_bench_test.go:30: singleflight total: 12671460 shared: 12671459
 Benchmark_sync_singleflight-7  7195585  170 ns/op  96 B/op  1 allocs/op
 --- BENCH: Benchmark_sync_singleflight-7
-    singleflight_bench_test.go:49: singleflight total: 1 shared: 0
-    singleflight_bench_test.go:49: singleflight total: 100 shared: 0
-    singleflight_bench_test.go:49: singleflight total: 10000 shared: 0
-    singleflight_bench_test.go:49: singleflight total: 1000000 shared: 0
-    singleflight_bench_test.go:49: singleflight total: 7195585 shared: 0
+    singleflight_bench_test.go:53: singleflight total: 1 shared: 0
+    singleflight_bench_test.go:53: singleflight total: 100 shared: 0
+    singleflight_bench_test.go:53: singleflight total: 10000 shared: 3546
+    singleflight_bench_test.go:53: singleflight total: 1000000 shared: 897228
+    singleflight_bench_test.go:53: singleflight total: 13313968 shared: 11728991
 ```
